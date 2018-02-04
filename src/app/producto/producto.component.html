@@ -1,0 +1,29 @@
+  <div class="row">
+      <div class="col-9">
+        <figure class="snip1423" *ngFor="let producto of listaProductos">
+          <img [src]="producto.imagen" alt="sample57" />
+          <figcaption>
+            <h3>{{producto.nombre}}</h3>
+            <p>All this modern technology just makes people try to do everything at once.</p>
+            <div class="price">
+              {{producto.precio}}€
+            </div>
+          </figcaption><i class="ion-android-cart" ></i>
+          <a href="#" (click)="anadirProducto(producto)"></a>
+        </figure>
+
+      </div>
+    
+        
+          <div class="col-3">
+              <h3>Precio Total:{{totalComprados}}€</h3>
+
+              <ul class="list-group">
+                <li class="list-group-item" *ngFor="let comprado of productosComprados">{{comprado.nombre}}</li>
+                
+              </ul>
+
+           </div>
+
+    </div>
+
