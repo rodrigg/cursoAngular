@@ -1,0 +1,14 @@
+  
+      <input [(ngModel)]="todo.nombre"/>
+
+      <button (click)="agregarTodo(todo)">Agregar</button><input type="checkbox"  [(ngModel)]="todo.importante"/>Importante
+
+
+
+      <ul>
+        <li *ngFor="let itemTodo of todos" [ngClass]=agregarClases(itemTodo)>
+           {{itemTodo.nombre}}{{itemTodo.importante}}
+        
+        </li>
+             
+      </ul>
