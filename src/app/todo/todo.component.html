@@ -6,19 +6,19 @@
         <option value="green">Verde</option>
         <option value="yellow">Amarillo</option>
       </select>
-
-
+      {{fecha | date:'dd/MM/YYYY' | uppercase}}
+      {{precio | currency}}
   
       <ul>
-        <li *ngFor="let itemTodo of todos" [ngClass]=agregarClases(itemTodo)>
+        <li *ngFor="let itemTodo of todos | priorizarTodos" (click)="itemTodo.terminado=true" [ngClass]="agregarClases(itemTodo)" >
             <div [ngSwitch]="itemTodo.color">
-                <span *ngSwitchCase="'red'" [ngStyle]="{'background-color': itemTodo.color}">
+                <span *ngSwitchCase="'red'"  [ngStyle]="{'background-color': itemTodo.color}">
                    {{itemTodo.nombre}}
                 </span>
-                <span *ngSwitchCase="'green'" [ngStyle]="{'background': itemTodo.color}">
+                <span *ngSwitchCase="'green'"  [ngStyle]="{'background': itemTodo.color}">
                    {{itemTodo.nombre}}
                 </span>
-                <span *ngSwitchCase="'yellow'" [ngStyle]="{'background': itemTodo.color}">
+                <span *ngSwitchCase="'yellow'"  [ngStyle]="{'background': itemTodo.color}">
                     {{itemTodo.nombre}}
                 </span>  
                 <span *ngSwitchDefault>
@@ -26,5 +26,11 @@
                 </span>  
              </div>
         </li>
-      </ul>      
-        
+      </ul>    
+    <hr/>
+      <ul>
+          <li *ngFor="let itemTodo of todos | terminadosTodos" [ngClass]="agregarClases(itemTodo)"  [ngStyle]="{'background': itemTodo.color}">
+              {{itemTodo.nombre}}
+          </li>
+        </ul>      
+      

@@ -9,6 +9,8 @@ import { Todo } from './todo';
 export class TodoComponent implements OnInit {
   todo:Todo=new Todo("",false,false,"") ;
   todos:Todo[]=[];
+  fecha=new Date();
+  precio:number;
   constructor() { }
 
   ngOnInit() {

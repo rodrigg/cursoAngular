@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { ProductoComponent } from './producto/producto.component';
 import { HeaderComponent } from './header/header.component';
 import { TodoComponent } from './todo/todo.component';
+import { PriorizarTodosPipe } from './pipes/priorizar-todos.pipe';
+import { TerminadosTodosPipe } from './pipes/terminados-todos.pipe';
 
 
 @NgModule({
@@ -14,7 +16,9 @@ import { TodoComponent } from './todo/todo.component';
     AppComponent,
     ProductoComponent,
     HeaderComponent,
-    TodoComponent
+    TodoComponent,
+    PriorizarTodosPipe,
+    TerminadosTodosPipe
   ],
   imports: [
     BrowserModule,FormsModule
