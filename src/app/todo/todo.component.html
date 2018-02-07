@@ -1,14 +1,30 @@
   
       <input [(ngModel)]="todo.nombre"/>
-
       <button (click)="agregarTodo(todo)">Agregar</button><input type="checkbox"  [(ngModel)]="todo.importante"/>Importante
+      <select [(ngModel)]="todo.color" >
+        <option value="red">Rojo</option>
+        <option value="green">Verde</option>
+        <option value="yellow">Amarillo</option>
+      </select>
 
 
-
+  
       <ul>
         <li *ngFor="let itemTodo of todos" [ngClass]=agregarClases(itemTodo)>
-           {{itemTodo.nombre}}{{itemTodo.importante}}
-        
+            <div [ngSwitch]="itemTodo.color">
+                <span *ngSwitchCase="'red'" [ngStyle]="{'background-color': itemTodo.color}">
+                   {{itemTodo.nombre}}
+                </span>
+                <span *ngSwitchCase="'green'" [ngStyle]="{'background': itemTodo.color}">
+                   {{itemTodo.nombre}}
+                </span>
+                <span *ngSwitchCase="'yellow'" [ngStyle]="{'background': itemTodo.color}">
+                    {{itemTodo.nombre}}
+                </span>  
+                <span *ngSwitchDefault>
+                    {{itemTodo.nombre}}
+                </span>  
+             </div>
         </li>
-             
-      </ul>
+      </ul>      
+        
