@@ -1,13 +1,17 @@
+
+      <input [(ngModel)]="todo.nombre" name="nombre" #nombre="ngModel" required pattern="a-zA-Z"/>
+      <span *ngIf="nombre.touched && !nombre.valid">Error de validacion</span>
   
-      <input [(ngModel)]="todo.nombre"/>
-      <button (click)="agregarTodo(todo)">Agregar</button><input type="checkbox"  [(ngModel)]="todo.importante"/>Importante
-      <select [(ngModel)]="todo.color" >
+ 
+      
+      
+      <input type="checkbox" name="importante" [(ngModel)]="todo.importante"/>Importante
+     
+      <select  name="color" [(ngModel)]="todo.color" >
         <option value="red">Rojo</option>
         <option value="green">Verde</option>
         <option value="yellow">Amarillo</option>
       </select>
-      {{fecha | date:'dd/MM/YYYY' | uppercase}}
-      {{precio | currency}}
   
       <ul>
         <li *ngFor="let itemTodo of todos | priorizarTodos" (click)="itemTodo.terminado=true" [ngClass]="agregarClases(itemTodo)" >
@@ -29,7 +33,9 @@
       </ul>    
     <hr/>
       <ul>
-          <li *ngFor="let itemTodo of todos | terminadosTodos" [ngClass]="agregarClases(itemTodo)"  [ngStyle]="{'background': itemTodo.color}">
+          <li *ngFor="let itemTodo of todos | terminadosTodos" 
+              [ngClass]="agregarClases(itemTodo)"  
+              [ngStyle]="{'background': itemTodo.color}">
               {{itemTodo.nombre}}
           </li>
         </ul>      

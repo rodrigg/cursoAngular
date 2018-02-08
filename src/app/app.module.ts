@@ -9,6 +9,8 @@ import { HeaderComponent } from './header/header.component';
 import { TodoComponent } from './todo/todo.component';
 import { PriorizarTodosPipe } from './pipes/priorizar-todos.pipe';
 import { TerminadosTodosPipe } from './pipes/terminados-todos.pipe';
+import { BuscarNombrePipe } from './pipes/buscar-nombre.pipe';
+
 
 
 @NgModule({
@@ -18,8 +20,9 @@ import { TerminadosTodosPipe } from './pipes/terminados-todos.pipe';
     HeaderComponent,
     TodoComponent,
     PriorizarTodosPipe,
-    TerminadosTodosPipe
-  ],
+    TerminadosTodosPipe,
+    BuscarNombrePipe
+    ],
   imports: [
     BrowserModule,FormsModule
   ],
