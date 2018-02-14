@@ -10,6 +10,8 @@ import { TodoComponent } from './todo/todo.component';
 import { PriorizarTodosPipe } from './pipes/priorizar-todos.pipe';
 import { TerminadosTodosPipe } from './pipes/terminados-todos.pipe';
 import { BuscarNombrePipe } from './pipes/buscar-nombre.pipe';
+import { HomeComponent } from './home/home.component';
+import { routing } from './app.routing';
 
 
 
@@ -21,10 +23,11 @@ import { BuscarNombrePipe } from './pipes/buscar-nombre.pipe';
     TodoComponent,
     PriorizarTodosPipe,
     TerminadosTodosPipe,
-    BuscarNombrePipe
+    BuscarNombrePipe,
+    HomeComponent
     ],
   imports: [
-    BrowserModule,FormsModule
+    BrowserModule,FormsModule,routing
   ],
   providers: [],
   bootstrap: [AppComponent]

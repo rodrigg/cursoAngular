@@ -10,23 +10,20 @@ export class BuscarNombrePipe implements PipeTransform {
   transform(productos:Producto[], nombre?:string ): Producto[] {
 
    let productosBuscados:Producto[]=[];
+    //productos.filter(producto=>producto.nombre.indexOf(nombre)>-1)
       if(!nombre){
         productosBuscados=productos;
         
       }
       else{
         for(let producto of productos){
-        
-          if(producto.nombre.toLocaleLowerCase().indexOf(nombre.toLowerCase())>-1){
-            console.log(producto.nombre);
-            console.log(nombre);
-            productosBuscados.push(producto);
+          if(producto.nombre.toLowerCase().indexOf(nombre.toLowerCase())>-1){
+              productosBuscados.push(producto);
   
           }
         }
       }
      
-
     return productosBuscados;
   }
 

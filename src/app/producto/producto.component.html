@@ -1,29 +1,30 @@
 <div class="row">
     <div class="col-10">
-<form #formProducto="ngForm" (ngSubmit)="agregarProducto()">
-<div class="form-group">
-    <label for="nombre">Nombre</label>
-    <input type="text" class="form-control" id="nombre"
-           required
-           [(ngModel)]="producto.nombre" name="nombre" #nombre="ngModel">
-           <span *ngIf="nombre.touched && !nombre.valid">Nombre requerido</span>
-  </div>
-  
+<form #formProducto="ngForm" (ngSubmit)="agregarProducto(); formProducto.reset()">
   <div class="form-group">
-    <label for="precio">Descrpcion</label>
-    <input type="text"  class="form-control" id="descripcion"
-           [(ngModel)]="producto.precio" name="precio">
-  </div>
-  <div class="form-group">
-      <label for="imagen">Imagen</label>
-      <input type="text"  class="form-control" id="imagen"
-             [(ngModel)]="producto.imagen" name="imagen">
+      <label for="nombre">Nombre</label>
+      <input type="text" class="form-control" id="nombre"
+            required
+            [(ngModel)]="producto.nombre" name="nombre" #nombre="ngModel">
+            <span *ngIf="nombre.touched && !nombre.valid">Nombre requerido</span>
     </div>
+    
+    <div class="form-group">
+      <label for="precio">Precio</label>
+      <input type="text"  class="form-control" id="descripcion"
+            [(ngModel)]="producto.precio" name="precio">
+    </div>
+    <div class="form-group">
+        <label for="imagen">Imagen</label>
+        <input type="text"  class="form-control" id="imagen"
+              [(ngModel)]="producto.imagen" name="imagen">
+      </div>
     <button type="submit"[disabled]="!formProducto.form.valid" >Añadir</button>
     
   </form> 
-  <input type="search" [(ngModel)]="buscarNombre"/>
-
+  <div class="buscador">
+    <input type="search" [(ngModel)]="buscarNombre"/>
+  </div>
   
      
         <figure class="snip1423" *ngFor="let producto of listaProductos | buscarNombre:this.buscarNombre" >
