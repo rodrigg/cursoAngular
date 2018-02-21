@@ -12,7 +12,10 @@ import { TerminadosTodosPipe } from './pipes/terminados-todos.pipe';
 import { BuscarNombrePipe } from './pipes/buscar-nombre.pipe';
 import { HomeComponent } from './home/home.component';
 import { routing } from './app.routing';
-
+import { ProductoService } from './services/producto.service';
+import { ArticulosComponent } from './articulos/articulos.component';
+import {HttpModule} from '@angular/http';
+import { UsuarioRandomComponent } from './usuario-random/usuario-random.component';
 
 
 @NgModule({
@@ -24,12 +27,14 @@ import { routing } from './app.routing';
     PriorizarTodosPipe,
     TerminadosTodosPipe,
     BuscarNombrePipe,
-    HomeComponent
+    HomeComponent,
+    ArticulosComponent,
+    UsuarioRandomComponent
     ],
   imports: [
-    BrowserModule,FormsModule,routing
+    BrowserModule,FormsModule,routing,HttpModule
   ],
-  providers: [],
+  providers: [ProductoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

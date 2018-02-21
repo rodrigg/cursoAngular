@@ -27,7 +27,7 @@
   </div>
   
      
-        <figure class="snip1423" *ngFor="let producto of listaProductos | buscarNombre:this.buscarNombre" >
+        <figure class="snip1423" *ngFor="let producto of pService.listaProductos | buscarNombre:this.buscarNombre" >
           <img [src]="producto.imagen" alt="sample57" />
           <figcaption>
             <h3>{{producto.nombre}}</h3>
